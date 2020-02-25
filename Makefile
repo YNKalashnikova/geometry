@@ -1,2 +1,2 @@
 g	:	g.c
-	gcc -Wall -g3 -O0 -o 
+	gcc -Wall -g3 -O0 -o g g.c
