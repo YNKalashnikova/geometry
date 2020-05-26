@@ -1,16 +1,10 @@
+#include "read_file.h"
 #include <stdio.h>
 
-int main()
+void read_file(char* str, figure* circle)
 {
-    FILE* file;
-    struct figure {
-        char name[10];
-        int p[3];
-    };
-    struct figure circle[10];
+    FILE* file = fopen(str, "r");
     int i = 0;
-    file = fopen("figures.txt", "r");
-
     while (fscanf(file,
                   "%s (%d %d, %d)",
                   circle[i].name,
@@ -25,5 +19,4 @@ int main()
                circle[i].p[2]);
         i++;
     }
-    return 0;
 }
