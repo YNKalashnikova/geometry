@@ -1,2 +1,4 @@
 main
-figures.txt
+bin/circles_execut
+*.txt
+*.o
