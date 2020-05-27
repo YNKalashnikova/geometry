@@ -1,4 +1,5 @@
 #include "read_file.h"
+#include "circle_proc.h"
 #include <stdio.h>
 #define N 1000
 
@@ -21,6 +22,7 @@ int main(int argc, char** argv)
                circle[i].x,
                circle[i].y,
                circle[i].r);
+        printf("perimeter = %.3lf\n", perimeter(circle, i));
     }
     return 0;
 }
