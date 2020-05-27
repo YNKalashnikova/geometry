@@ -1,3 +1,5 @@
+#ifndef READ_FILE_H
+#define READ_FILE_H
 #include <stddef.h>
 
 typedef struct {
@@ -13,3 +15,4 @@ size_t parse_coord(size_t* i, int* coord, char* line);
 size_t read_string(char* line, size_t number, figure* circle);
 
 size_t read(char* str, figure* circle);
+#endif
