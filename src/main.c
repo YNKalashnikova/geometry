@@ -1,5 +1,5 @@
-#include "read_file.h"
 #include "circle_proc.h"
+#include "read_file.h"
 #include <stdio.h>
 #define N 1000
 
@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 {
     if (argc != 2) {
         printf("Incorrect arguments\n");
-                            return 0;
+        return 0;
     }
     size_t number = read(argv[1], circle);
     if (number == 0) {
