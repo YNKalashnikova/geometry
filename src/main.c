@@ -1,5 +1,4 @@
 #include "circle_proc.h"
-#include "read_file.h"
 #include <stdio.h>
 #define N 1000
 
