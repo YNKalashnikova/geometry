@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 {
     if (argc != 2) {
         printf("Incorrect arguments\n");
-        return 0;
+                            return 0;
     }
     size_t number = read(argv[1], circle);
     if (number == 0) {
