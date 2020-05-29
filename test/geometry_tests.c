@@ -79,3 +79,107 @@ CTEST(crossing, not_crossed_figures)
     int result = crossing(circle, 1, 2);
     ASSERT_EQUAL(expect, result);
 }
+
+CTEST(read_string, correct_string)
+{
+    char* line = "circle (1 2, 3)\n";
+    size_t expect = 1;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, correct_string_2)
+{
+    char* line = "circle (      1       2     ,       3)\n";
+    size_t expect = 1;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, correct_string_3)
+{
+    char* line = "ciRCLE(      1       2     ,       3)\n";
+    size_t expect = 1;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, correct_string_4)
+{
+    char* line = "circle(1 2, 0.1)\n";
+    size_t expect = 1;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string)
+{
+    char* line = "circle (1, 3)\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_2)
+{
+    char* line = "circle (1 n, 3)\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_3)
+{
+    char* line = "circle (1, d)\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_4)
+{
+    char* line = "circle ()\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_5)
+{
+    char* line = "circle 1 2, 3\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_6)
+{
+    char* line = "1 2, 3)\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_7)
+{
+    char* line = "circle (1 2, 3\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_8)
+{
+    char* line = "circle\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(read_string, invalid_string_9)
+{
+    char* line = "circlr (1 2, 3)\n";
+    size_t expect = 0;
+    size_t result = read_string(line, 0, circle);
+    ASSERT_EQUAL(expect, result);
+}
