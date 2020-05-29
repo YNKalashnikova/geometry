@@ -38,4 +38,3 @@ void crossing_check(figure* circle, size_t n, size_t number)
         }
     }
 }
-
