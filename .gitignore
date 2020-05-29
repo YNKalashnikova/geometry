@@ -1,4 +1,5 @@
 main
 bin/circles_execut
+bin/test
 *.txt
 *.o
