@@ -62,3 +62,20 @@ CTEST(area, test)
     ASSERT_DBL_NEAR_TOL(expect, result, 1);
 }
 
+CTEST(crossing, crossed_figures)
+{
+    create_circle(circle, 1, 1, 2, 2);
+    create_circle(circle, 2, 2, 2, 2);
+    int expect = 1;
+    int result = crossing(circle, 1, 2);
+    ASSERT_EQUAL(expect, result);
+}
+
+CTEST(crossing, not_crossed_figures)
+{
+    create_circle(circle, 1, 1, 2, 2);
+    create_circle(circle, 2, 7, 8, 2);
+    int expect = 0;
+    int result = crossing(circle, 1, 2);
+    ASSERT_EQUAL(expect, result);
+}
